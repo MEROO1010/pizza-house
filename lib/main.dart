@@ -1,35 +1,33 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_onboarding_slider/flutter_onboarding_slider.dart';
+import 'package:pizza_house/pages/home.dart';
+import 'package:splash_screen_view/SplashScreenView.dart';
 
 void main() {
-  runApp(const onbordaingscreens());
+  runApp(splashScreen());
 }
 
-class onbordaingscreens extends StatefulWidget {
-  const onbordaingscreens({super.key});
-
-  @override
-  State<onbordaingscreens> createState() => _onbordaingscreensState();
-}
-
-class _onbordaingscreensState extends State<onbordaingscreens> {
+class splashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return CupertinoApp(
-      home: OnBoardingSlider(
-        headerBackgroundColor: Colors.white,
-        skipTextButton: Text('Skip'),
-        background: [
-          Image.asset('assets/images/onborading1.png'),
-          Image.asset('assets/images/onborading2.png'),
-          Image.asset('assets/images/onborading3.png'),
-          Image.asset('assets/images/onborading4.png'),
-        ],
-        totalPage: 4,
-        speed: .8,
-        pageBodies: [],
-      ),
+    Widget example1 = SplashScreenView(
+      navigateRoute: onbordaingscreens(
+          //title: '',
+          ),
+      duration: 8000,
+      imageSize: 200,
+      imageSrc: "assets/images/pizza_house_logo.png",
+      colors: [
+        // Colors.purple,
+        //  Colors.blue,
+        Colors.yellow,
+        Colors.red,
+      ],
+      backgroundColor: Colors.yellow[400],
+    );
+
+    return MaterialApp(
+      title: 'Splash screen Demo',
+      home: example1,
     );
   }
 }

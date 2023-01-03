@@ -35,12 +35,23 @@ class _onbordaingscreensState extends State<onbordaingscreens> {
                     image: AssetImage('assets/images/onborading4.png'))),
           ],
           done: Done(
-            child: Icon(Icons.done),
+            child: Icon(
+              Icons.done,
+              color: Colors.white,
+            ),
             home: Mainpage(),
           ),
-          next: Next(child: Icon(Icons.arrow_forward)),
-          back: Back(child: Icon(Icons.arrow_back)),
-          dotIndicator: DotIndicator(),
+          next: Next(
+              child: Icon(
+            Icons.arrow_forward,
+            color: Colors.white,
+          )),
+          back: Back(
+              child: Icon(
+            Icons.arrow_back,
+            color: Colors.white,
+          )),
+          dotIndicator: DotIndicator(selectedColor: Colors.white),
         )
       ],
     );

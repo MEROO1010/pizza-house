@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pizza_house/colors/hexcolor.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class Mainpage extends StatefulWidget {

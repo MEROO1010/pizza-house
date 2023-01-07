@@ -67,7 +67,7 @@ class _detailsState extends State<details> {
                 Navigator.push(
                   context,
                   PageTransition(
-                    type: PageTransitionType.leftToRight,
+                    type: PageTransitionType.fade,
                     child: Card(),
                     isIos: true,
                     duration: Duration(milliseconds: 400),

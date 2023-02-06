@@ -57,7 +57,7 @@ class _detailsState extends State<details> {
         //THE BTNS
         Container(
           child: Image.asset('assets/images/btns.png'),
-          margin: EdgeInsets.only(left: 60, top: 620),
+          margin: EdgeInsets.only(left: 60, top: 600),
         ),
 
         //ADD TO CARD BUTTON
@@ -77,17 +77,17 @@ class _detailsState extends State<details> {
               child: Text('Add To Card',
                   style: TextStyle(
                       color: HexColor('#CA4930'),
-                      fontSize: 30,
+                      fontSize: 20,
                       fontFamily: 'Roboto-Bold.ttf')),
               style: TextButton.styleFrom(
-                padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
+                padding: EdgeInsets.all(20),
                 backgroundColor: HexColor('#F9C97D'),
-                minimumSize: Size(140, 50),
+                fixedSize: Size(180, 60),
                 shape: new RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(18.0),
+                    borderRadius: BorderRadius.circular(12.0),
                     side: BorderSide(color: HexColor('#F9C97D'))),
               )),
-          margin: EdgeInsets.only(left: 60, top: 720),
+          margin: EdgeInsets.only(left: 58, top: 690),
         )
       ],
     );

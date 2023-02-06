@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'package:pizza_house/data/data.json';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -20,7 +19,7 @@ class _cardState extends State<card> {
 
   //FETCH CONTENT FROM THE JSON FILE
   Future<void> readJson() async {
-    final String response = await rootBundle.loadString('pages/dat.json');
+    final String response = await rootBundle.loadString('assets/data/dat.json');
     final data = await json.decode(response);
     setState(() {
       _cards = data["cards"];
@@ -34,22 +33,31 @@ class _cardState extends State<card> {
         //Baackground color
         Scaffold(
           backgroundColor: HexColor('#F2EDDC'),
+          body: Padding(
+            padding: EdgeInsets.all(25),
+            child: Column(
+              children: [
+                ElevatedButton(
+                  child: const Text('Load Data'),
+                  onPressed: readJson,
+                ),
+              ],
+            ),
+          ),
         ),
 
-        //Cards
+        // Display the data loaded from sample.json
         _cards.isNotEmpty
             ? Expanded(
                 child: ListView.builder(
                   itemCount: _cards.length,
                   itemBuilder: (context, index) {
                     return Card(
-                      key: ValueKey(_cards[index]["id"]),
-                      margin: const EdgeInsets.only(left: 40, top: 400),
-                      color: Colors.amber.shade100,
+                      margin: const EdgeInsets.all(10),
                       child: ListTile(
                         leading: Text(_cards[index]["id"]),
-                        title: Text(_cards[index]["images"]),
-                        subtitle: Text(_cards[index]["title"]),
+                        title: Text(_cards[index]["name"]),
+                        subtitle: Text(_cards[index]["description"]),
                       ),
                     );
                   },

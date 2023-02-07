@@ -31,39 +31,15 @@ class _cardState extends State<card> {
     return Stack(
       children: [
         //Baackground color
-        Scaffold(
-          backgroundColor: HexColor('#F2EDDC'),
-          body: Padding(
-            padding: EdgeInsets.all(25),
-            child: Column(
-              children: [
-                ElevatedButton(
-                  child: const Text('Load Data'),
-                  onPressed: readJson,
-                ),
-              ],
-            ),
+        MaterialApp(
+          home: Container(
+            color: HexColor('#F2EDDC'),
           ),
         ),
 
-        // Display the data loaded from sample.json
-        _cards.isNotEmpty
-            ? Expanded(
-                child: ListView.builder(
-                  itemCount: _cards.length,
-                  itemBuilder: (context, index) {
-                    return Card(
-                      margin: const EdgeInsets.all(10),
-                      child: ListTile(
-                        leading: Text(_cards[index]["id"]),
-                        title: Text(_cards[index]["name"]),
-                        subtitle: Text(_cards[index]["description"]),
-                      ),
-                    );
-                  },
-                ),
-              )
-            : Container()
+        Container(
+          child: Image.asset('assets/images/card1.png'),
+        )
       ],
     );
   }
